@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Allow access to login and public pages
+Allow: /login
+Allow: /auth/
+Allow: /assets/
+Allow: /favicon.ico
+
+# Disallow sensitive areas (pharmacy management is typically private)
+Disallow: /branch/
+Disallow: /tenant/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+
+# Sitemap (create if needed for marketing pages)
+# Sitemap: https://your-domain.vercel.app/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1 
