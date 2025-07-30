@@ -740,7 +740,7 @@ export default function AppRoutes() {
       {/* Legacy Routes for Backward Compatibility */}
       <Route
         path="/manager"
-        element={<ProtectedRoute role="manager" component={SalesDashboard} />}
+        element={<ProtectedRoute role={["owner", "manager"]} component={SalesDashboard} />}
       />
       <Route
         path="/sales"

@@ -66,10 +66,30 @@ export default defineConfig({
       }
     }
   },
-  // Resolve react-is issue for recharts
+  // Resolve react-is issue for recharts and Supabase module resolution
   optimizeDeps: {
-    include: ['react-is', 'react', 'react-dom', 'react-router-dom'],
-    exclude: ['@supabase/supabase-js']
+    include: [
+      'react-is', 
+      'react', 
+      'react-dom', 
+      'react-router-dom',
+      '@supabase/supabase-js',
+      '@supabase/postgrest-js',
+      '@supabase/realtime-js',
+      '@supabase/storage-js',
+      '@supabase/functions-js',
+      '@supabase/auth-js'
+    ],
+    exclude: []
+  },
+  // Fix Supabase module resolution issues
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
+  ssr: {
+    noExternal: ['@supabase/supabase-js']
   },
   // Define environment variables
   define: {
